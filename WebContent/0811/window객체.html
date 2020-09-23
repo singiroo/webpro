@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css" type ="text/css">
+<script type ="text/javascript">
+	function proc1(){
+		
+		//window.open(); // 아무것도 없는 빈페이지. target 속성은 _blank가 기본값.
+		window.open("../아메리카노.html","_self", "코리아", "width=500 height = 300"); // url, target, name(논리적 이름), specs(여기서는 크기로 설정)지정
+		
+		
+	}
+	function proc2(){
+		window.open("input.html" , "입력", "width = 500 height = 300 top = 200 left = 200");  // specs 속성값 중 top은 위로부터 얼만큼의 px이 떨어지는가 left는 왼쪽으로부터 얼만큼의 px이 떨어지는가를 나타냄
+		
+	}
+
+
+
+</script>
+</head>
+<body>
+
+<div class="box">
+	<h3>1. 새 창 열기</h3>
+	확인 버튼 클릭 시 새로운 윈도우 창이 열림.<br>
+	<br>
+	<input type="button" value="확인" onclick="proc1()">
+	<br><br>
+	<div id = "result1"></div>
+</div>
+<div class="box">
+	<h3>2. 새 창 열기(자식 윈도우)</h3>
+	확인 버튼 클릭 시 새로운 윈도우 창이 열림.<br>
+	새로운 창(자식 윈도우)에서 이름 주소 전화번호를 입력받는다<br>
+	자식 윈도우에서 입력받은 값을 부모 윈도우에 출력한다.<br>
+	<br>
+	<input type="button" value="확인" onclick="proc2()">
+	<br><br>
+	<div id = "result2"></div>
+</div>
+</body>
+</html>

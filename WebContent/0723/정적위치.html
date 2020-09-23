@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+div{
+	width : 100px;
+	height : 50px;
+	background : yellow;
+	margin : 10px;
+	padding : 10px;
+}
+#d2{
+	background : pink;
+	position : relative; /* 상대위치 : 현재 위치를 기준으로  100px 아래로  */
+	top : 100px;
+}
+#d3{
+	background : cyan;
+	position : absolute; /* 절대위치 : 크롬의 경우 주소창 기준에서 100px 밑으로  */
+	top : 100px;
+}
+#d4{
+	background : orange;
+	
+}
+#fix{
+	position : fixed; /* 윈도우(창) 기준으로 고정. 스크롤에 영향 받지 않음.  */
+	right : 30px;
+}
+
+
+</style>
+
+
+
+
+</head>
+<body>
+  <div id = "d1">1</div>
+  <div id = "d2">2</div>
+  <div id = "d3">3</div>
+  <div id = "d4">4</div>
+  <div id = "d5">1</div>
+  <div id = "d6">2</div>
+  <div id = "d7">3</div>
+  <div id = "fix">4</div>
+  <div id = "d9">1</div>
+  <div id = "d10">2</div>
+  <div id = "d11">3</div>
+  <div id = "d12">4</div>
+  
+  
+</body>
+</html>

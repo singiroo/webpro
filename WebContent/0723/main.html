@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+
+<style>
+div.con{
+	height : 800px;
+	border : 2px solid green;
+	width : 300px;
+}
+div#right{
+	width : 190px;
+}
+header{
+	background : beige;
+	height : 100px;
+}
+header img{
+	width : 70px;
+	height : 70px;
+	margin: 10px;
+	display: inline-block;
+}
+header h1{
+	text-align : center;
+	font-size : 50px;
+}
+nav{
+	box-sizing : border-box;
+	margin-top : 10px;
+	border-left : none;
+	border-right : none;
+	border-top : 4px dotted lightgreen;
+	border-bottom : 6px double lightgreen;
+	text-align: center;
+}
+nav li{
+	display : inline;
+	color : blue;
+	margin : 0px 60px;
+	letter-spacing : 5px;
+	font-weight: bold;
+	font-size : 20px;
+}
+a:link{
+	text-decoration : none;
+	color: blue;
+}
+a:visited{
+	color: purple;
+}
+a:hover{
+	color: red;
+}
+div#con{
+	margin: 10px;
+	width : 1360px;
+	float : left;
+	display: inline-block;
+}
+
+#left{
+
+	box-sizing : border-box;
+	width : 300px;
+	min-width : 200px;
+	height : 100%;
+	border-radius : 20px;
+	background : rgb(109, 121, 150);
+	float : left;
+	
+}
+#left table{
+	width :100%;
+	height : 40px;
+}
+#left tr{
+	background:rgb(82, 93, 128);
+	width :100%;
+	height : 50px;
+	color : white;
+}
+#left h2{
+	color : white;
+	margin-left: 10px;
+}
+.category:link{
+	color : white;
+}
+.category:visited{
+	color : silver;
+}
+.category:hover{
+	color : red;
+}
+section{
+	box-sizing : border-box;
+	width : 1300px;
+	min-width : 300px;
+	height : 100%;
+	float : left;
+	margin-left : 10px;
+	margin-right : 10px;	
+}
+#atc1{
+	width : 100%;
+	height: 100%;
+}
+section iframe{
+	width : 100%;
+	mid-width: 500px;
+	height : 98%;
+	border-radius : 20px;
+}
+#right{
+
+width : 230px;
+min-width : 190px;
+height : 100%;
+float : right;
+background: rgb(226,224,215); 
+border-radius : 20px;
+
+}
+
+#shopcart {
+	padding-left : 10px;
+}
+#login {
+	padding-left : 10px;
+}
+#login .button{
+	margin-top: 15px;
+}
+footer{
+	clear : both;
+	text-align: center;
+	background: black;
+	color : white;
+	font-size: 15px;
+	height : 40px;
+	padding : 10px;
+	margin-top: 5px;
+	vertical-align: middle;
+	width : 1850px;
+	border-radius: 20px;
+	margin: 10px;
+}
+footer p{
+	margin : 0px;
+}
+
+</style>
+</head>
+<body>
+<div id = "all">
+<div>
+<header>
+	<h1>
+		<img src="../images/shopping.jpg">
+		<a href ="main.html">Web Shop</a>
+	</h1>
+</header>
+</div>
+<div>
+<nav>
+	<ul>
+		<li><a href="main.html">Home</a></li>
+		<li><a href="">About Us</a></li>
+		<li><a href="">News</a></li>
+		<li><a href="">My Account</a></li>
+		<li><a href="">Contacts</a></li>
+	</ul>
+</nav>
+</div>
+<div id = "content">
+<div class = "con">
+<aside id = "left">
+<h2>카테고리</h2>
+<table >
+<tr>
+<td><a href="computer.html" target="ifr" class = "category">&nbsp;&nbsp;컴퓨터</a></td>
+</tr>
+<tr>
+<td><a href="clothing.html" target="ifr" class = "category">&nbsp;&nbsp;의류</a></td>
+</tr>
+<tr>
+<td><a href="music.html" target="ifr" class = "category">&nbsp;&nbsp;음악</a></td>
+</tr>
+<tr>
+<td><a href="movie.html" target="ifr" class = "category">&nbsp;&nbsp;영화</a></td>
+</tr>
+<tr>
+<td><a href="sports.html" target="ifr" class = "category">&nbsp;&nbsp;스포츠/레저</a></td>
+</tr>
+<tr>
+<td><a href="furniture.html" target="ifr" class = "category">&nbsp;&nbsp;가구/인테리어</a></td>
+</tr>
+<tr>
+<td><a href="food.html" target="ifr" class = "category">&nbsp;&nbsp;식품</a></td>
+</tr>
+</table>
+</aside>
+</div>
+<div class="con" id = "con">
+<section>
+	<article id ="atc1">
+		<iframe src = "computer.html" name="ifr"></iframe>
+	</article>
+</section>
+</div>
+<div class="con" id = "right">
+<aside id = "right">
+	<div id = "shopcart">
+	<h4>Shopping Cart</h4>
+	<p>현재 쇼핑카트에 물품이 없습니다.</p>
+	<a href="cart.html" target="ifr">쇼핑카트 보기</a>
+	</div>
+	<div id = "login">
+	<h4>Log In</h4>
+	<form method ="post">
+	<label>아이디</label>
+	<input type="text" name="id">
+	<br>
+	<label>패스워드</label>
+	<input type="password" name="pass">
+	<input type="submit" value="로그인" name="로그인" class ="button">
+	<input type="reset" value ="초기화" name="초기화" class ="button">
+	<br><br>
+	<a href="join.html" target="ifr">회원가입</a>
+	<a href="" target="">비밀번호분실</a>
+	</form>
+	</div>
+</aside>
+</div>
+</div>
+<footer>
+<p>Copyright (c)2020 Kim</p>
+</footer>
+</div>
+</body>
+</html>

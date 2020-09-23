@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+	div{
+		width : 200px;
+		height : 100px;
+		background : skyblue;
+	}
+</style>
+<script>
+	function calc(){
+		var x = prompt("첫번째 정수를 입력하세요.", "정.수.를 입력해주세요"); 
+		var y = prompt("두번째 정수를 입력하세요.", "정.수.를 입력해주세요"); 
+		var op = prompt("연산자를 입력해주세요.", "제발 연산자를 입력해주세요.");
+		
+		x = parseInt(x);
+		y = parseInt(y);
+		var res = "결과 : ";
+// 		switch(op){
+// 		case"+":
+// 			res += x + op + y + "=" +(x+y);
+// 			break;
+// 		case"-":
+// 			res += x + op + y + "=" + (x-y);
+// 			break;
+// 		case"*":	
+// 			res += x + op + y + "=" + (x*y);
+// 			break;
+// 		case"/":
+// 			res += x + op + y + "=" + (x/y);
+// 			break;
+// 		default:
+// 			res = "사칙 연산자를 입력해주세요..";
+// 		}
+		
+		if(op == "+"){
+			res += x + op + y + "=" +(x+y);
+		} else if(op == "-"){
+			res += x + op + y + "=" + (x-y);
+		} else if(op == "*"){
+			res += x + op + y + "=" + (x*y);
+		} else if(op =="/"){
+			res += x + op + y + "=" + (x/y);
+		} else{
+			res = "사칙 연산자를 입력해주세요..제. 발."
+		}
+		
+		document.getElementById('out').innerHTML = res;
+	}
+</script>
+
+</head>
+<body>
+	<pre>
+	두개의 수를 prompt로 입력받는다.
+	한 개의 연산자를  prompt로 입력받는다.
+	
+	연산자를 비교해서(if/ switch) 연산을 수행한다.
+	결과값을 div에 출력한다
+	</pre>
+	<input type="button" value="확인" onclick="calc()">
+	<br><br>
+	<div id= "out"></div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script>
+function proc1(){
+
+	result1 = document.querySelector('#result1')
+	setTimeout(function(){
+		result1.style.backgroundColor = "green";
+				
+	}, 500); //0.5초가 지나면  function()을 실행.
+}
+//내일
+function proc2(but){ // but : 클릭한 버튼의 객체
+	
+	
+	but.style.display = "none";
+	ok = but; // 전역 변수이기 때문에 proc3에서도 사용가능
+	//#result2의 요소를 검색하기
+	result2 = document.querySelector('#result2');
+	intv = setInterval(function(){
+		//배경색을 랜덤하게 변경
+		//rgb값을 랜덤하게 변경하여 조정
+		r = Math.floor(Math.random()*256);
+		g = Math.floor(Math.random()*256);
+		b = Math.floor(Math.random()*256);
+		
+		/*
+		 red, green, blue
+		 rgb(0~255, 0~255, 0~255)
+		 rgb(0~100%, 0~100%, 0~100%)
+		 #rrggbb; rr : r의 16진수 값, gg : g의 16진수 값, bb : b의 16진수 값
+		*/
+		
+// 		r16 = r.toString(16);
+// 		g16 = g.toString(16);
+// 		b16 = b.toString(16);
+		
+// 		result2.style.backgroundColor = "#"+r16+g16+b16;		
+		result2.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+		// 템플릿 리터럴  : `(backtick)으로 묶어야 템플릿 리터럴을 작성할 수 있다. + 연산 필요 없이 전체를 하나의 문자열로 취급. 
+// 		result2.style.backgroundColor = 'rgb('+r+','+g+','+b+')';
+		
+		console.log(intv);
+		
+		
+	}, 500); //0.5초 간격으로 function()을 실행.
+}
+
+
+function proc3(){
+	ok.style.display = "inline";
+	clearInterval(intv);
+}
+
+
+
+
+</script>
+</head>
+<body>
+
+<div class="box">
+	<h3>1. setTimeout</h3>
+	setTimeout(code, millisec); 지정된 millisec가 경과하면 code를 실행하고 종료한다.<br>
+	확인버튼 클릭하면 result1의 배경색을 'green'으로 변경한다.<br>
+	<br>
+	<input type="button" value="확인" onclick="proc1()">
+	<br><br>
+	<div id = "result1"></div>
+</div>
+
+<div class="box">
+	<h3>2. setInterval</h3>
+	변수 = setInterval(code, millisec); 지정된 millisec가 경과할 때마다 주기적으로 code를 실행.<br>
+	clearInterval(변수) : setInterval의 수행기능을 종료한다.<br>
+	확인버튼 클릭하면 result2의 배경색을 변경한다.<br>
+	<br>
+	<input type="button" value="확인" onclick="proc2(this)"> <!-- this : 실행중인 버튼 객체  -->
+	<input type="button" value="종료" onclick="proc3()">
+	<br><br>
+	<div id = "result2"></div>
+</div>
+</body>
+</html>

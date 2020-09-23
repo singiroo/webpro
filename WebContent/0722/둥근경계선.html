@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+
+<style>
+div{
+width : 200px;
+height : auto;
+border : 2px solid orange;
+margin : 20px;
+padding : 20px;
+text-align : center;
+}
+#d2{
+	border-radius: 20px;
+}
+#d3{
+	border-radius: 20px 50px; /* 대각선(좌상 -우하, 우상 - 좌하)으로 매칭됨.  */
+}
+#d4{
+	border-radius:  20px 50px 30px; /*좌상, (우상-좌하), 우하  */
+}
+#d5{
+	border-radius: 50%;
+}
+#d6{
+	border-radius: 50% 20px;	
+}
+#d7{
+	width : 150px;
+	height : auto;
+	background : blue;
+	box-shadow: 20px 10px 5px darkgray;
+	color : white;
+}
+
+</style>
+</head>
+<body>
+<pre>
+div{
+width : 200px;
+height : auto;
+border : 2px solid orange;
+margin : 20px;
+padding : 20px;
+}
+</pre>
+
+
+
+
+<div id = "d1"></div>
+<div id = "d2">
+#d2{<br>
+	border-radius: 20px;<br>
+}
+
+</div>
+<div id = "d3">
+#d3{<br>
+	border-radius: 20px 50px; /* 대각선(좌상 -우하, 우상 - 좌하)으로 매칭됨.  */<br>
+}
+</div>
+<div id = "d4">
+#d4{<br>
+	border-radius:  20px 50px 30px; /*좌상, (우상-좌하), 우하  */<br>
+}
+</div>
+<div id = "d5">
+#d5{<br>
+	border-radius: 50%;<br>
+}
+</div>
+<div id = "d6">
+#d6{<br>
+	border-radius: 50% 20px;<br>
+}
+</div>
+
+<div id = "d7">
+#d7{<br>
+	width : 150px;<br>
+	height : 20px;<br>
+	background : blue;<br>
+	box-shadow: 20px 10px 5px darkgray;<br>
+	color : white;<br>
+}
+
+
+
+</div>
+</body>
+</html>

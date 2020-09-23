@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+img{
+	width : 100px;
+	height : 100px;
+}
+
+#close{
+	display : none;
+}
+</style>
+<script>
+
+
+window.onload = function(){
+	ok = document.getElementById('ok');
+	close = document.getElementById('close');
+	
+}
+
+
+function proc1(){
+	result1 = document.getElementById('result1');
+	ok.style.display = "none";
+	close.style.display = "inline";
+	a = setInterval(function(){
+		//result1에서 첫번째 요소를 선택한다.
+		child1 = result1.firstChild;
+		//result1에 선택한 요소를 추가한다.
+		result1.appendChild(child1);
+		//
+		
+	},400)
+	
+}
+function proc2(){
+	clearInterval(a);
+	ok.style.display = "inline";
+	close.style.display = "none";
+	
+	
+}
+
+
+</script>
+
+</head>
+<body>
+
+<div class="box">
+	<h3>1. 이미지 회전</h3>
+	1초마다 한번씩 맨 처음 이미지를 마지막으로 옮긴다.<br>
+	첫번째 이미지를 선택한다 : firstChild<br>
+	result1에 추가한다 : appendChild()<br>
+	기존에 이미 존재하던 요소를 추가하면 기존 요소는 사라짐.(이동 개념)<br>
+	<br>
+	<br>
+	<input id="ok" type="button" value="확인" onclick="proc1()">
+	<input id="close" type="button" value="종료" onclick="proc2()">
+	<br><br>
+	<div id = "result1">
+		<img src="../images/산.png" alt="산">
+		<img src="../images/수국.jpg" alt="수국">
+		<img src="../images/컴퓨터2.jpg" alt="컴퓨터2">
+		<img src="../images/사자2.jpg" alt="사자2">
+		<img src="../images/배경1.jpg" alt="배경1">
+		<img src="../images/등대.jpg" alt="등대">
+		<img src="../images/풍차.jpg" alt="풍차">
+	</div>
+</div>
+</div>
+</body>
+</html>

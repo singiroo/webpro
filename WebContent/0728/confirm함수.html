@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script>
+	function proc1(){
+		
+		res = "";
+		//수를 입력해서 구구단 출력
+		while(true){
+			su = prompt("수를 입력");
+			res += "***" + su + "단 ***<br>";
+			for(i=1; i<=9; i++){
+				res += su + " * " + i + " = " + (su*i) + "<br>";
+			}
+			document.getElementById('result1').innerHTML = res;
+			
+			//계속 ?
+			yn = confirm("계속??");
+			if(!yn) break;
+		}
+		
+	}
+</script>
+
+
+</head>
+<body>
+
+<div class="box">
+	<h3>1. confirm함수</h3>
+	- 사용자의 질문에 답변하는 함수이다.
+	- true / false를 리턴<br>
+	<br>
+	<input type="button" value="확인" onclick="proc1()">
+	<br><br>
+	<div id = "result1"></div>
+</div>
+</div>
+</body>
+</html>

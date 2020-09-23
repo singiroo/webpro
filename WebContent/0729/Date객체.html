@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script>
+function proc1(){
+	now1 = new Date();
+	now2 = new Date(987654321); //1970년 1월 1일 0시부터 주어진 값이 지난 날짜
+	now3 = new Date("2010.02.23");
+	now4 = new Date(2010, 01, 23); // 월이 01월부터 시작하는 것이 아닌 00월 부터 시작. 즉, 01은 2월을 지칭함
+	
+	res = "new Date() : " + now1 + "<br>";
+	res += "new Date(987654321) : " + now2 + "<br>";
+	res += 'new Date("2010.02.23") : ' + now3 + "<br>";
+	res += "new Date(2010, 02, 23) : " + now4 + "<br>";
+	
+	document.getElementById('result1').innerHTML = res;
+}
+
+function proc2(){
+	now = new Date();
+	sdate = now.toLocaleString();
+	ddate = now.toLocaleDateString();
+	tdate = now.toLocaleTimeString();
+	
+	res = "now : " + now + "<br>";
+	res += "now string : " + sdate + "<br>";
+	res += "now date : " + ddate + "<br>";
+	res += "now time : " + tdate + "<br>";
+	
+	document.getElementById('result2').innerHTML = res;
+	
+	
+}
+
+function proc3(){
+	dayArr = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+	now = new Date();
+	day = now.getDay();
+	res = "오늘은 ";
+	res += dayArr[day];
+// 	switch(day){
+// 	case 0: res += "일요일";
+// 		break;
+// 	case 1: res += "월요일";
+// 		break
+// 	case 2: res += "화요일";
+// 		break
+// 	case 3: res += "수요일";
+// 		break
+// 	case 4: res += "목요일";
+// 		break
+// 	case 5: res += "금요일";
+// 		break
+// 	case 6: res += "토요일";
+// 		break
+// 	default : res = "에러!!!"
+// 	}
+	res += "입니다.";
+	
+	document.querySelector('#result3').innerHTML = res;
+	
+}
+
+</script>
+
+
+
+
+</head>
+<body>
+
+<div class="box">
+	<h3>1. Date객체 생성</h3>
+	- new Date()<br>
+	- new Date(987654321) : 1970.1.1일 기준으로 주어진 값이 경과한 날짜<br>
+	- new Date("2010.02.23")<br>
+	- new DAte(2000,01,23,12,30,12)<br>
+	- 월은 0월부터 시작, 숫자로 Date 객체 생성시 하나 작은 값으로 설정 한다.<br>
+	<br>
+	<input type="button" value="확인" onclick="proc1()">
+	<br><br>
+	<div id = "result1"></div>
+</div>
+
+<div class="box">
+	<h3>2. Date객체 생성</h3>
+	- now = new Date()<br>
+	- now.toLocaleString() : 날짜와 시간<br>
+	- now.toLocaleDateString() : 날짜<br>
+	- now.toLocaleTimeString() : 시간<br>
+	<br>
+	<input type="button" value="확인" onclick="proc2()">
+	<br><br>
+	<div id = "result2"></div>
+</div>
+<div class="box">
+	<h3>3. 요일 구하기</h3>
+	- now = new Date()<br>
+	- day = now.getDay() : 요일<br>
+	- now.() : <br>
+	- now.() : <br>
+	<br>
+	<input type="button" value="확인" onclick="proc3()">
+	<br><br>
+	<div id = "result3"></div>
+</div>
+</body>
+</html>

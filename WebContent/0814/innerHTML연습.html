@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+.box{
+	text-align : center;
+}
+
+
+#result1{
+	display:inline-block;
+	height : 90%;
+	width : 60%;
+	font-size : 30px;
+	text-align : center;
+}
+
+select{
+	width : 80px;
+	height: 30px;
+	font-weight: bold;
+	font-size : 20px;
+}
+
+</style>
+<script>
+
+function print(){
+	
+	idx = ff.dans.selectedIndex;
+	
+	dan = ff.dans.options[idx].value;
+	
+	dan = parseInt(dan.substr(0,1));
+	
+	res = dan + "단<br><br>";
+	
+	for(i=1;i<10;i++){
+		res += dan + " * " + i + " = " + (dan*i)+"<br>";
+	}
+	
+	document.querySelector("#result1").innerHTML = res;
+
+}
+</script>
+</head>
+<body>
+
+<div class="box">
+	<form name="ff">
+		<select name = "dans">
+			<option name = "dan" value = "2단">2단</option>
+			<option name = "dan" value = "3단">3단</option>
+			<option name = "dan" value = "4단">4단</option>
+			<option name = "dan" value = "5단">5단</option>
+			<option name = "dan" value = "6단">6단</option>
+			<option name = "dan" value = "7단">7단</option>
+			<option name = "dan" value = "8단">8단</option>
+			<option name = "dan" value = "9단">9단</option>
+		</select>
+		<input type="button" value="출력" onclick="print()"><br><br>
+	</form>
+		<h2>&lt;&nbsp;결과 출력&nbsp;&gt;</h2>
+		<div id='result1'></div>
+</div>
+</body>
+</html>

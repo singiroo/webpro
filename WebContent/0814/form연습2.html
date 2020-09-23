@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script>
+function proc1(){
+	name = document.getElementById('nameInput').value;
+	gend = document.getElementsByName('gend');
+	hob = document.getElementsByName('hobby');
+
+	res = "";
+	res += name + "씨!" + "\n";
+	
+	for(j in gend){
+		if(gend[j].checked){
+			res += "당신은 " + gend[j].value + "자이고,\n취미는 ";
+		}
+	}
+	
+	
+	
+// 	for(j=0;j<gend.length;j++){
+// 		if(gend[j].checked){
+// 		res += "당신은 " + gend[j].value + "자이고,\n취미는 ";
+// 		}
+// 	}
+	
+	for(i=0;i<hob.length;i++){
+		if(hob[i].checked){
+			res += hob[i].value + " ";
+		}
+	}
+	res += "이군요!";
+	
+	document.querySelector('#textarea').value = res;
+	
+	/* 2번째 방법 
+	vname = document.ff.name.value;
+	vgend = document.ff.gend.value;
+	
+	vhobby = document.ff.hobby;
+	res = "이름 : " + vname + "\n";
+	res += "성별 : " + vgend + "\n";
+	res += "취미 : ";
+	
+	for(i=0;i < vhobby.length;i++){
+		if(vhobby[i].checked){
+			res += vhobby[i].value + " ";
+		}
+	}
+	
+	document.ff.textarea.value = res; */
+	
+	
+}
+
+</script>
+</head>
+<body>
+
+<div class="box">
+	<form name = "ff">
+		<fieldset>
+			<legend>form 연습2</legend>
+			<label>이 름 :</label> <input type="text" name = "name" id = "nameInput">
+			<br>
+			<label>성 별 :</label> 
+			<input type="radio" value ="남" name="gend" checked>남
+			<input type="radio" value ="여" name="gend">여
+			<br><br>
+			<label>취미 :</label>
+			<input type ="checkbox" value = "여행" name ="hobby" checked="checked">여행
+			<input type ="checkbox" value = "독서" name ="hobby">독서
+			<input type ="checkbox" value = "영화감상" name ="hobby">영화감상
+			<input type ="checkbox" value = "바둑" name ="hobby">바둑
+			<input type ="checkbox" value = "장기" name ="hobby">장기
+			<input type ="checkbox" value = "등산" name ="hobby">등산
+			<input type ="checkbox" value = "낚시" name ="hobby">낚시
+			<br>
+			<input type="button" value="결과 출력" onclick="proc1()">
+			<br><br>
+			<textarea cols="60" rows="10" id = "textarea"></textarea>
+		</fieldset>
+	</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script>
+
+function proc1(){
+	
+	regNum = prompt("주민등록번호를 입력해주세요. 예시 : xxxxxx-xxxxxxx");
+	res = "입력 값 : " + regNum + "<br>";
+	
+	//남자  : 1, 3
+	//여자 : 2, 4
+	//2000년대 이전 : 1,2
+	//2000년대 이후 : 3,4
+	//성별 코드에 따라 년대가 달라지며 성별이 달라진다
+	//먼저 성별부터 추출
+	
+	year = "19";
+	
+	gend = parseInt(regNum.substr(7,1));
+	
+	if(gend >= 3)	year = "20";
+	
+	year += regNum.substring(0,2);
+	month = regNum.substring(2,4);
+	day = regNum.substring(4,6);
+	birth = year +"년 " + month + "월 " + day +"일";
+	gender = "";
+	
+	switch(gend){
+	case 1: case 3:
+		gender = "남자";
+		break;
+	case 2: case 4:
+		gender = "여자";
+		break;
+	default:
+		gender = "성별 코드가 잘못되었습니다."
+	}
+	
+	now = new Date();
+	thisYear = now.getFullYear();
+	/* birthDate = new Date(year+"."+month+"."+day);
+	birthYear = birthDate.getFullYear(); */
+	birthYear = parseInt(year);
+	age = thisYear - birthYear + 1;
+
+	res += "생년월일 : " + birth + "<br>";
+	res += "성별 : " + gender + "<br>";
+	res += "나이 : " + age;
+	
+	document.querySelector('#result1').innerHTML = res;
+}
+
+function proc2(){
+	str = "234567892345"; // 문자열
+	code = prompt("주민번호 입력", "991010-1234567");
+	codeArr = code.split("-"); // 배열로 리턴
+	
+	code = codeArr[0].concat(codeArr[1]); //배열 : 9910101234567
+	console.log("code="+code); //브라우저의 콘솔에 출력
+	console.log("code.length = " + code.length); //브라우저의 콘솔에 출력
+	
+	sum = 0;
+	
+	for(i=0;i<code.length-1;i++){
+		sum += code[i] * str.substr(i,1);
+	}
+	value = 11 - (sum % 11);
+	value = value % 10;
+	res = "입력 : " + codeArr[0] + "<br>";
+	if(value == code[code.length-1]){
+		res += "올바른 주민번호";
+	}else{
+		res += "올바르지 않은 주민번호";
+	}
+	
+	document.querySelector('#result2').innerHTML = res;
+	
+// 	regNum = prompt("주민등록번호를 입력해주세요. 예시 : xxxxxx-xxxxxxx");
+// 	res = "입력 값 : " + regNum + "<br>";
+// 	result = 0;
+// 	sum = 0;
+// 	j = 1;
+// 	for(i=0;i<(regNum.length-1);i++){
+// 		if(j>9) j = 1;
+// 		j++;
+// 		num = parseInt(regNum.charAt(i));
+// 		if(isNaN(num))	continue;
+// 		sum += num * j;
+// 	}
+// 	result = sum % 11;
+// 	result = 11 - result;
+// 	switch(result){
+// 	case 10:
+// 		result = 0;
+// 		break;
+// 	case 11:
+// 		result = 1;
+// 		break;
+// 	}
+// 	if(result == regNum.charAt((regNum.length-1))){
+// 		res += "본 주민등록 번호는 유효합니다.";
+// 	}else{
+// 		res += "본 주민등록 번호는 유효하지 않습니다.";		
+// 	}
+	
+	
+// 	document.querySelector('#result2').innerHTML = res;
+	
+}
+</script>
+</head>
+<body>
+
+<div class="box">
+	<h3>1. 주민등록번호를 입력받아 생년월일과 성별을 출력</h3>
+	<br>
+	<input type="button" value="입력" onclick="proc1()">
+	<br><br>
+	<div id = "result1"></div>
+</div>
+
+<div class="box">
+	<h3>2.주민등록번호를 입력 받아 주민등록번호의 유효성을 검사. </h3>
+	주민번호 : ABCDEF-GHIJKLM<br>
+	1. A*2 + B*3 + ... + H*9 + I*2 + ... + L*5 의 총합을 구한다<br>
+	2. 1번의 합을 11로 나눈 나머지를 구한다.<br>
+	3. 11에서 2번의 결과를 뺀다.<br>
+	4. 3번의 결과가 0~9이면 값 그대로, 10이면 0, 11이면 1로 변환.<br>
+	5. 4번의 결과와 M자리의 값이 같으면 맞는 번호이다.<br>
+	<br>
+	<input type="button" value="확인" onclick="proc2()">
+	<br><br>
+	<div id = "result2"></div>
+</div>
+</body>
+</html>

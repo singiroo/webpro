@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#sendimg{
+	width : 50px;
+	height : 50px;
+}
+
+</style>
+
+</head>
+<body>
+  <form action="input.jsp" method="post">
+ <input type="hidden" value="korea" name = "id"><br> <!-- 서버 전송용 -->
+  이름 : <input type="text" name="name"><br>
+  전화번호 : <input type="text" name="tel"><br>
+  성별 : <input type="radio" value="남성" name ="gender">남성
+	  <input type="radio" value="여성" name ="gender">여성<br>
+	  
+  좋아하는 과일 : 
+  	<input type="checkbox" value="사과" name="fruits">사과
+  	<input type="checkbox" value="복숭아" name="fruits">복숭아
+  	<input type="checkbox" value="배" name="fruits">배
+  	<input type="checkbox" value="자두" name="fruits">자두
+  	<input type="checkbox" value="포도" name="fruits">포도
+  	<input type="checkbox" value="바나나" name="fruits">바나나
+  	<input type="checkbox" value="참외" name="fruits">참외<br>
+  첨부파일: 
+  <input type="file" name="file"><br>
+  <br>
+  - 전송 수행 :  input type = image, input type = submit,<br>
+  - 일반 버튼  input type=button 
+  <input id = "sendimg" type="image" src = "../images/풍차.jpg" > <!-- 전송 기능도 함 -->
+  <input type="reset" value = "취소">
+  <input type="submit" value = "전송">
+  <input type="button" value = "확인" onclick="alert('hello!!')">
+  <br>
+  - 전송 수행 : button type="submit", button <br>
+  - 일반 버튼 : button type ="button"<br> 
+  <button type="button" onclick ="alert('안녕하세요')">확인</button>
+  <button type="submit">전송</button> <!-- 전송 기능 있음 -->
+  <button>전송</button>				<!-- 전송 기능 있음 -->
+  <button type="reset">초기화</button> <!-- 초기화 기능 있음 -->
+  
+  	
+  </form>
+</body>
+</html>

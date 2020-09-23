@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+	div{
+		width : 200px;
+		height : 100px;
+		background : skyblue;
+	}
+</style>
+<script>
+function score(){
+	x = prompt("점수를 입력해주세요.", "제.발. 숫자로..");
+	flag = x/10;
+	flag = parseInt(flag);
+// 	if(flag >= 9) str = "A";
+// 	else if(flag >= 8) str = "B";
+// 	else if(flag >= 7) str = "C";
+// 	else if(flag >= 6) str = "D";
+// 	else str = "F";
+	
+	switch(flag){
+	case 10: 
+	case 9: 
+		str = "A";
+		break;
+	case 8: 
+		str = "B";
+		break;
+	case 7:
+		str = "C";
+		break;
+	case 6: 
+		str = "D";
+		break;
+	default: 
+		str = "F";
+	}
+	
+	res ="점수 : " + x +"<br>";
+	res += "학점 : " + str + "학점입니다";
+	
+	document.getElementById('out').innerHTML = res;
+	
+}
+</script>
+</head>
+<body>
+<pre>
+확인 버튼 클릭하면 0~100사잉의 정수를 입력
+학점을 구해서 div에 출력한다.
+점수가 90 ~ 100이면 ‘A’
+점수가 80 ~ 89이면 ‘B’
+점수가 70 ~ 79이면 ‘C’
+점수가 60 ~ 69이면 ‘D’
+점수가 0 ~ 59이면 ‘F’ 
+</pre>
+	<input type="button" value = "확인" onclick="score()"><br>
+	<div id ="out"></div>
+</body>
+</html>

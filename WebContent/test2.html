@@ -1,0 +1,73 @@
+<!DOCTYPE html>  <!-- html 버전 표기, html5 표기 기준 -->
+<html>
+<head>
+<head>
+<title></title>
+<meta charset="UTF-8"> <!-- UTF-8인코딩 -->
+<style>
+P {
+	background-color: pink; /*배경색 설정*/
+	color: blue;			/*폰트 색상*/
+	width: 300px;			/*너비 설정*/
+	height: 100px;			/*높이 설정*/
+}
+
+span {
+	background-color: black;		/*배경색 설정*/
+	color: lime;					/*폰트 색상*/
+	display:inline-block;			/*인라인 요소에 여백과 너비, 높이 설정을 주기 위해 블록설정의 속성을 추가*/ 
+	border : 5px solid green;
+ 	width: 300px;					/*너비 설정 -- 인라인 요소에는 작동 안함*/ 
+	height: 100px;					/*높이 설정 -- 인라인 요소에는 작동 안함*/ 
+	margin-top: 30px;				/*여백 설정 -- margin-top은 위쪽 여백 설정*/
+	margin-bottom: 30px;			/*여백 설정 -- margin-bottom은 아래쪽 여백 설정*/
+}
+
+img {								/*이미지 설정*/
+	width: 200px;					/*이미지의 너비*/
+	height: 150px;					/*이미지의 높이*/
+}
+</style>
+
+</head>
+
+<body>
+	p태그는 paragraph의 약자로 문단을 나타낸다.
+	<br> p태그는 br태그가 없어도 자동으로 줄이 바뀜. <!-- 블록 요소니까 / 블록 요소 : 요소 하나가 하나의 블록(영역)을 갖는다. -->
+	<br> 앞뒤 줄 사이에 여백을 만든다.
+	<br> 한줄 전체를 차지한다.
+	<br>
+	<!-- block요소-->
+	가로크기(width)와 세로크기(height)를 지정할수 있다.<!-- 블록을 갖고 있으니까. -->
+	<p>Hello HTML</p>
+	<!--p태그는 앞뒤로 여백이 생김-->
+	<p>Style을 이용해서 문서를 꾸며줌.</p>
+
+	<br>
+	<br> span태그는 자동으로 줄이 바뀌지 않기 때문에 br태그로 줄을 바꾼다 <!-- span 지정은 인라인 요소로 요소가 별도의 블록을 갖지 않음. -->
+	<br> 지정된 영역 크기만큼만 차지한다.
+	<br>
+	<!--inline(라인 안) 요소-->
+	가로 세로 크기, 여백(margin)를 지정할 수 없다.
+	<br> 단, 스타일에 display : inline-block을 설정하면 <!-- 인라인 요소에 블록 속성 추가 -->
+	<br> 가로, 세로크기, 여백(margin)을 지정할 수 있다.
+	<br> 앞뒤 여백을 주기 위해서 스타일에 margin 값을 부여한다.<!-- 개체 외부 공간 설정, 개체와 개체 사이 여백  -->
+	<!-- 여백 추가 시 인자가 하나면 : 상 하 좌 우 여백 모두/ 둘이면 : 상-하 세트, 좌-우 세트 / 셋이면 : 상, 좌-우 세트 하나, 하 / 넷이면 : 상, 좌, 하, 우 -->
+	<br>
+
+	<span>무궁화 꽃이 피었습니다.</span>
+
+	<span>수국이 만발하였습니다.</span>
+	<br> img 태그는 이미지를 나타내는 태그이다
+	<br> 필수 속성으로 src=" (이미지 파일 이름, 위치) "에 표시하고자 하는 이미지 이름을 설정한다.
+	<br> 이미지의 크기를 설정할 수 있다.
+	<br>
+	<img src="images/딸기스무디.jpg">
+	<!--img는 닫지 않는다. 반드시 src 속성이 있어야 함.-->
+	<br> a태그는 페이지이동을 실행하는 태그 inline 요소이다. 필수 속성으로 href=" (페이지 이름) "
+	<br>
+	<a href="http://www.naver.com">네이버</a>
+
+	<!-- 주석 : 설명문 -->
+</body>
+</html>

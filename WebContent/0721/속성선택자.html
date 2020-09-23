@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href ="../css/public.css">
+
+<style>
+	pre{
+		padding : 10px;
+	}
+	p{
+		font-size : 1.5em;
+	}
+	p[class=pp]{
+		color : blue;
+	}
+	span[class =pp]{
+		font-size : 2.0em;
+		font-weight : bold;
+	}
+	strong {
+		font-size : 1.4em;
+	}
+	p[id =p4] {
+		background-color : lightblue;
+	}
+	p[title = 안녕1] {
+		border : 3px solid green;
+	}
+	p[title]{
+		font-style : italic;
+		color : pink;
+	}
+	p[id]{
+		text-align : center;
+		text-shadow :  20px 10px 3px gray ; /*x좌표 y좌표 선명도 색상*/
+	}
+
+
+
+/* .pp(class ="pp"인 모두)
+p.pp(p 태그 중 class = "pp"인 모두)
+p[class = pp] (위와 동일)
+span.pp
+span[class = pp]
+#p4
+p[id=p4]
+p[title = 안녕1]
+p[title](p 태그 중 title 속성 있는 모두)
+p[id](p 태그 중 id 속성 있는 모두)
+ */
+ 
+ 
+ 
+ 
+ 
+ 
+</style>
+</head>
+<body>
+<div>
+<pre>
+작성팁
+속성 관련 선택
+<strong>.pp(class ="pp"인 모두)</strong>
+<strong>p.pp(p 태그 중 class = "pp"인 모두)</strong>
+<strong>p[class = pp] (위와 동일)</strong> color : blue;
+<strong>span.pp</strong>
+<strong>span[class = pp]</strong> font-size : 2.0em;	font-weight : bold;
+<strong>#p4</strong>
+<strong>p[id=p4]</strong> background-color : lightblue;
+<strong>p[title = 안녕1]</strong> border : 3px solid green;
+<strong>p[title](p 태그 중 title 속성 있는 모두)</strong> font-style : italic;  color : pink;
+<strong>p[id](p 태그 중 id 속성 있는 모두)</strong> text-align : center;   text-shadow :  20px 10px 3px gray ;
+
+글자의 그림자
+ text-shadow : 20px(x좌표) 10px(좌표) 3px(선명도, 숫자가 높아질수록 흐려짐.) gray(그림자 색상);
+</pre>
+	<p title = "안녕1" id = "p1">안녕하세요.</p> <!-- title 속성 : 마우스를 올렸을 때 뜨는 풍선말   -->
+	<p class = "pp">안녕하세요..</p>
+	<p title = "안녕2" class = "pp">안녕하세요...</p>
+	<p id = "p4">안녕하세요....</p>
+	<p>안녕하세요.....</p>
+	<p class = "pp2">안녕하세요......</p>
+	
+ <span class ="pp">안녕히 가세요.</span>	<br>
+ <span>안녕히 가세요..</span>	
+ <span>안녕히 가세요...</span>	
+ <span>안녕히 가세요....</span>	
+</div>
+</body>
+</html>

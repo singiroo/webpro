@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+table {
+	border: 3px solid green;
+	border-collapse: collapse;
+}
+
+td {
+	width: 150px;
+	height: 70px
+}
+
+#tab2 {
+	border: 4px solid blue;
+	margin-top: 20px;
+	border-collapse: separate;
+}
+
+#tab2 th {
+	font-size: 1.6em;
+	height : 60px;
+}
+
+#tab2 #tr1 {
+	height: 100px;
+}
+
+#tab2 td {
+	width: 120px;
+	height: 40px;
+	text-align: center;
+}
+
+#tab2 #td1 {
+	width: 300px;
+}
+
+#tab2 .td1 { /*클래스 td1 */
+	text-align: left;
+}
+</style>
+
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td colspan="4"></td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="4"></td>
+			<td colspan="2" rowspan="2"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+
+	<table id="tab2" border="1">
+		<tr>
+			<th colspan="5">평생교육원 강좌 소개 - 2020년도 1학기</th>
+		</tr>
+		<tr>
+			<td><strong>강좌이름</strong></td>
+			<td><strong>강의자</strong></td>
+			<td><strong>소개</strong></td>
+			<td><strong>강좌코드</strong></td>
+			<td><strong>실습비</strong></td>
+		</tr>
+		<tr id="tr1">
+			<td>뎃생과 유화</td>
+			<td>김철수</td>
+			<td id="td1" class="td1">나는 자유다 나는 자유다 나는 자유다 나는 자유다 나는 자유다 나는
+				자유다 나는 자유다 나는 자유다 나는 자유다 나는 자유다 나는 자유다 나는 자유다 나는 자유다 나는 자유다</td>
+			<td>H27</td>
+			<td>100,000원</td>
+		</tr>
+		<tr>
+			<td>바이올린</td>
+			<td>홍길동</td>
+			<td class="td1">다라마바사아자차카타파타</td>
+			<td>H28</td>
+			<td>200,000원</td>
+		</tr>
+		<tr>
+			<td>성악</td>
+			<td>김호성</td>
+			<td class="td1">가나다라마바사아자차카타파하</td>
+			<td>H30</td>
+			<td>300,000원</td>
+		</tr>
+	</table>
+
+</body>
+</html>
